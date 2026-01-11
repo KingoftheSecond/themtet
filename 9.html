@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngôi Trường Mến Yêu - Trang Chủ</title>
+    <style>
+        /* CSS Cơ bản để bạn hình dung bố cục */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #f4f4f4; padding: 20px; text-align: center; border-bottom: 2px solid #ddd; }
+        nav { background: #333; color: #fff; padding: 10px; position: sticky; top: 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+        nav ul li { position: relative; margin: 0 15px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+        /* Menu con (Dropdown) */
+        .dropdown-content { display: none; position: absolute; background: #444; min-width: 160px; z-index: 1; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { display: block; padding: 10px; border-bottom: 1px solid #555; }
+        
+        main { padding: 20px; max-width: 1000px; margin: auto; }
+        .video-container { text-align: center; margin: 20px 0; }
+        footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="HINH/logo.png" alt="Logo Trường" style="width:100px;"> <h1>NGÔI TRƯỜNG MẾN YÊU</h1> <h3>Tên nhóm: [NHẬP TÊN NHÓM TẠI ĐÂY] - Lớp: [NHẬP LỚP TẠI ĐÂY]</h3> <p><i>"Khẩu hiệu: [NHẬP KHẨU HIỆU CỦA NHÓM TẠI ĐÂY]"</i></p> </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li> <li><a href="gioithieu.html">Giới thiệu</a></li> <li class="dropdown">
+                <a href="#">Hoạt động ▾</a> <div class="dropdown-content">
+                    <a href="hoatdong1.html">Hoạt động Thể thao</a> <a href="hoatdong2.html">Hoạt động Tình nguyện</a> </div>
+            </li>
+            
+            <li><a href="monhoc.html">Môn học</a></li> <li><a href="tailieu.html">Tài liệu</a></li> <li><a href="dangky.html">Đăng ký</a></li> </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Chào mừng bạn đến với trang web của chúng tôi</h2>
+            <p>[Nhập nội dung giới thiệu ngắn gọn về mục đích trang web của bạn tại đây]</p> </section>
+
+        <section class="video-container">
+            <h2>Video Giới Thiệu Nhóm & Website</h2>
+            <video width="80%" controls>
+                <source src="VIDEO/video_gioithieu.mp4" type="video/mp4"> Trình duyệt của bạn không hỗ trợ xem video.
+            </video>
+            <p>(Video thể hiện các thông tin của nhóm và trang web)</p> </section>
+
+        <section>
+            <h2>Tin tức & Hình ảnh nổi bật</h2>
+            <p>Dưới đây là một số hình ảnh về ngôi trường của chúng mình:</p>
+            <img src="HINH/truong_hoc.jpg" alt="Ảnh trường học" style="width:100%; max-width:600px;"> <p>Xem thêm các thông tin khác tại <a href="https://www.google.com" target="_blank">đây</a>.</p> </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bản quyền thuộc về Nhóm [TÊN NHÓM]</p> <p>Địa chỉ: [NHẬP ĐỊA CHỈ TRƯỜNG/LỚP TẠI ĐÂY]</p> <p>Liên kết: 
+            <a href="#" style="color:white;">Facebook</a> | 
+            <a href="#" style="color:white;">Youtube</a> </p>
+    </footer>
+
+</body>
+</html>

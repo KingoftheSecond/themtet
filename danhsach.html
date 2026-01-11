@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Giáo Viên - Đầy Đủ</title>
+    <style>
+        /* 1. THIẾT LẬP CHUNG */
+        body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    line-height: 1.6;
+    /* Dùng than.jpg làm nền cho toàn bộ trang */
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('ANH/than.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('ANH/dau.jpg');
+            background-size: cover; background-position: center;
+            height: 200px; color: white;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+
+        /* 2. MENU */
+        nav.main-menu { background: #1e5799; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+nav.main-menu ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+nav.main-menu ul li { position: relative; }
+nav.main-menu ul li a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+nav.main-menu ul li:hover { background: #ffce00; }
+nav.main-menu ul li:hover > a { color: #1e5799; }
+
+/* Menu con (Dropdown) */
+.dropdown-content { display: none; position: absolute; background: #fff; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a { color: #333 !important; border-bottom: 1px solid #eee; padding: 12px 20px !important; }
+.dropdown-content a:hover { background: #f4f4f4; }
+
+        /* 3. BỐ CỤC CHIA CỘT (CHỐNG VỠ KHUNG) */
+        .container { 
+            display: flex; 
+            max-width: 1300px; 
+            margin: 30px auto; 
+            gap: 25px; 
+            align-items: flex-start;
+            padding: 0 15px;
+        }
+
+        /* Cột trái (Mục lục) */
+        aside.left-sidebar {
+            flex: 1.5; 
+            position: sticky; top: 80px;
+            background: white; padding: 20px;
+            border-radius: 8px; border-top: 4px solid #ffce00;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Cột giữa (Nội dung) */
+        main {
+            flex: 5;
+        }
+
+        /* 4. STYLE MỤC LỤC */
+        .timeline-index { list-style: none; padding: 0; margin: 0; }
+        .timeline-index li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .timeline-index a { text-decoration: none; color: #444; font-weight: bold; display: flex; align-items: center; }
+        .timeline-index a:hover { color: #1e5799; padding-left: 5px; transition: 0.3s; }
+        
+        .year { 
+            background: #ffce00; color: #000; width: 25px; height: 25px; 
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 4px; font-size: 0.8em; margin-right: 10px; 
+        }
+
+        /* 5. STYLE CARD BỘ MÔN */
+        .subject-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 20px; 
+        }
+        .subject-card { 
+            background: #fff; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.3s;
+        }
+        .subject-card:hover { transform: translateY(-5px); }
+        .subject-card h3 { background: #1e5799; color: white; margin: 0; padding: 12px; text-align: center; }
+        .subject-card ul { list-style: none; padding: 15px; margin: 0; }
+        .subject-card li { padding: 6px 0; border-bottom: 1px solid #eee; font-size: 0.95em; }
+
+        /* 6. BẢNG CHỦ NHIỆM */
+        .table-responsive { overflow-x: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; }
+        table th { background: #1e5799; color: white; padding: 12px; text-align: left; }
+        table td { border-bottom: 1px solid #eee; padding: 12px; }
+        .badge-class { background: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+
+        /* 7. FOOTER */
+        footer { 
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('ANH/chan.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    padding: 40px 20px; 
+    text-align: center; 
+    margin-top: 50px;
+    border-top: 5px solid #ffce00;
+}
+footer a { color: #ffce00; text-decoration: none; font-weight: bold; }
+        .fb-link { color: #1877f2; text-decoration: none; font-weight: bold; background: white; padding: 5px 10px; border-radius: 5px; }
+
+        @media (max-width: 1024px) {
+            .container { flex-direction: column; }
+            aside.left-sidebar { position: static; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ĐỘI NGŨ SƯ PHẠM</h1>
+        <p>Trường THPT Huỳnh Văn Nghệ</p>
+    </header>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li class="dropdown">
+                <a href="#">Hoạt động phong trào ▾</a>
+                <div class="dropdown-content">
+                    <a href="phongtrao.html">Phong trào</a>
+                    <a href="hoatdong2.html">Hoạt động hướng nghiệp siêu vip</a>
+                </div>
+            </li>
+            <li><a href="danhsach.html">Danh sách</a></li>
+            <li><a href="dangky.html">Đăng ký</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="left-sidebar">
+            <h4 style="color: #1e5799; margin-top: 0;">DANH MỤC MÔN</h4>
+            <ul class="timeline-index">
+                <li><a href="#toan"><span class="year">Σ</span> Bộ môn Toán</a></li>
+                <li><a href="#van"><span class="year">✎</span> Bộ môn Ngữ Văn</a></li>
+                <li><a href="#anh"><span class="year">A</span> Tiếng Anh</a></li>
+                <li><a href="#ly"><span class="year">⚡</span> Vật Lý</a></li>
+                <li><a href="#hoa"><span class="year">🧪</span> Hóa Học</a></li>
+                <li><a href="#sinh"><span class="year">🧬</span> Sinh Học</a></li>
+                <li><a href="#xh"><span class="year">🌍</span> Sử - Địa - PL</a></li>
+                <li><a href="#chu-nhiem"><span class="year">★</span> GV Chủ Nhiệm</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="bo-mon">
+                <h2 style="color:#1e5799; border-left: 5px solid #ffce00; padding-left: 15px;">DANH SÁCH THEO BỘ MÔN</h2>
+                <div class="subject-grid">
+                    
+                    <div class="subject-card" id="toan">
+                        <h3>TOÁN</h3>
+                        <ul>
+                            <li>Lê Thị Mai Thi</li><li>Mai Long Thời</li><li>Ngô Thị Ngọc Hòa</li>
+                            <li>Đặng Thị Phương Loan</li><li>Nguyễn T.Hữu Tuyền</li><li>Phạm Trung Hồ</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-card" id="van">
+                        <h3>NGỮ VĂN</h3>
+                        <ul>
+                            <li>Nguyễn Thị Hương Thơm</li><li>Mai Thị Bích Vân</li><li>Trần Thị Thanh</li>
+                            <li>Nguyễn Thị Trà My</li><li>Nguyễn T. Mai Linh</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-card" id="anh">
+                        <h3>TIẾNG ANH</h3>
+                        <ul>
+                            <li>Lâm Văn Thành</li><li>Nguyễn Thị Hà</li><li>Nguyễn Ngọc T. Hiền</li>
+                            <li>Vũ Thị Thanh Mai</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-card" id="ly">
+                        <h3>VẬT LÝ</h3>
+                        <ul>
+                            <li>Nguyễn T. Kim Loan</li><li>Nguyễn Thanh Sơn</li><li>Nguyễn Quang Vinh</li>
+                            <li>Huỳnh T. Khánh Trang</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-card" id="hoa">
+                        <h3>HÓA HỌC</h3>
+                        <ul>
+                            <li>Tống Thị Lệ Hằng</li><li>Nguyễn Bình An</li><li>Nguyễn Tr. Y. Trang</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-card" id="sinh">
+                        <h3>SINH HỌC</h3>
+                        <ul>
+                            <li>Đỗ Hạnh Vi</li><li>Lương T.Tuyết Nhung</li><li>Nguyễn Bùi Mỹ Linh</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-card" id="xh">
+                        <h3>SỬ - ĐỊA - PL</h3>
+                        <ul>
+                            <li><b>Sử:</b> Lê T. Phương Thảo</li>
+                            <li><b>Địa:</b> Phạm Quốc Chung</li>
+                            <li><b>GDKT&PL:</b> Nguyễn T. Thu Hương</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <div style="margin: 40px 0; border-top: 2px dashed #ccc;"></div>
+
+            <section id="chu-nhiem">
+                <h2 style="color:#1e5799; border-left: 5px solid #ffce00; padding-left: 15px;">DANH SÁCH GIÁO VIÊN CHỦ NHIỆM</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Bộ Môn</th>
+                                <th>Họ và Tên</th>
+                                <th>Lớp Chủ Nhiệm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t<tr><td>Toán</td><td>Lê Thị Mai Thi</td><td><span class="badge-class">12.10</span></td></tr>
+
+                        <tr><td>Toán</td><td>Ngô Thị Ngọc Hòa</td><td><span class="badge-class">11.7</span></td></tr>
+
+                        <tr><td>Toán</td><td>Đặng Thị Phương Loan</td><td><span class="badge-class">11.8</span></td></tr>
+
+                        <tr><td>Toán</td><td>Nguyễn T.Hữu Tuyền</td><td><span class="badge-class">12.3</span></td></tr>
+
+                        <tr><td>Toán</td><td>Phạm Trung Hồ</td><td><span class="badge-class">11.4</span></td></tr>
+
+                        <tr><td>Lý</td><td>Nguyễn Thanh Sơn</td><td><span class="badge-class">12.4</span></td></tr>
+
+                        <tr><td>Lý</td><td>Nguyễn Quang Vinh</td><td><span class="badge-class">10.3</span></td></tr>
+
+                        <tr><td>Văn</td><td>Nguyễn Thị Trà My</td><td><span class="badge-class">10.1</span></td></tr>
+
+                        <tr><td>Văn</td><td>Nguyễn T. Mai Linh</td><td><span class="badge-class">10.5</span></td></tr>
+
+                        <tr><td>Văn</td><td>Đậu Văn Vinh</td><td><span class="badge-class">11.9</span></td></tr>
+
+                        <tr><td>Anh</td><td>Nguyễn Thị Hà</td><td><span class="badge-class">11.6</span></td></tr>
+
+                        <tr><td>Anh</td><td>Nguyễn Ngọc T. Hiền</td><td><span class="badge-class">10.4</span></td></tr>
+
+                        <tr><td>Sinh</td><td>Lương T.Tuyết Nhung</td><td><span class="badge-class">10.10</span></td></tr>
+
+                        <tr><td>GDKT&PL</td><td>Nguyễn T. Thu Hương</td><td><span class="badge-class">12.7</span></td></tr>
+                        <tr><td>Đang cập nhật tiếp tục...</td></tr>
+                    </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+    <div class="footer-container">
+        <p class="footer-copyright">© 2026 Bản quyền thuộc về Nhóm <strong>"THÈM TẾT"</strong></p>
+        
+        <p class="footer-address">
+            📍 <strong>Địa chỉ:</strong> Đường ĐT 747, Khu phố 4, Phường Uyên Hưng, Thành phố Tân Uyên, Tỉnh Bình Dương
+        </p>
+        
+        <div class="footer-social">
+            <span>Kết nối với chúng tôi:</span>
+            <a href="https://www.facebook.com/profile.php?id=61571166575273" target="_blank" class="fb-link">
+                🔵 Facebook Nhóm THÈM TẾT
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

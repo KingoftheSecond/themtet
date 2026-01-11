@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang=”vi”>
+<head>
+    <meta charset=”UTF-8”>
+    <title>Youth Team 12.2 | THPT Huỳnh Văn Nghệ</title>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+
+    <link href=https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap rel=”stylesheet”>
+
+    <style>
+        :root{
+            --white:#ffffff;
+            --light:#f4f6f8;
+            --dark:#222;
+            --gray:#666;
+            --accent:#2563eb;
+            --border:#e5e7eb;
+        }
+
+        *{box-sizing:border-box;margin:0;padding:0;font-family:’Poppins’,sans-serif;}
+        Body{background:var(--light);color:var(--dark);}
+
+        Header{
+            Background:var(--white);
+            Padding:18px 40px;
+            Display:flex;
+            Justify-content:space-between;
+            Align-items:center;
+            Border-bottom:1px solid var(--border);
+            Position:sticky;
+            Top:0;
+            z-index:1000;
+        }
+
+        Header h1{font-size:20px;font-weight:700;}
+
+        Nav a{
+            Margin-left:22px;
+            Text-decoration:none;
+            Color:var(--dark);
+            Font-weight:500;
+        }
+
+        Nav a:hover{color:var(--accent);}
+
+        Section{padding:70px 20px;}
+        .container{max-width:1200px;margin:auto;}
+
+        .hero{
+            Background:var(--white);
+            Text-align:center;
+        }
+
+        .hero h2{font-size:36px;margin-bottom:15px;}
+        .hero p{color:var(--gray);max-width:700px;margin:auto;}
+
+        .title{
+            Font-size:26px;
+            Margin-bottom:35px;
+            Border-left:5px solid var(--accent);
+            Padding-left:15px;
+        }
+
+        .grid{
+            Display:grid;
+            Grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            Gap:30px;
+        }
+
+        .card{
+            Background:var(--white);
+            Border-radius:14px;
+            Border:1px solid var(--border);
+            Overflow:hidden;
+            Box-shadow:0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .img-box{
+            Height:200px;
+            Background:#ddd;
+            Border:2px dashed #bbb;
+            Display:flex;
+            Align-items:center;
+            Justify-content:center;
+            Color:#555;
+            Font-size:14px;
+        }
+
+        .card-body{padding:20px;}
+        .card-body h3{margin-bottom:10px;font-size:18px;}
+        .card-body p{font-size:14px;color:var(--gray);}
+
+        /* FORM */
+        Form{
+            Background:var(--white);
+            Padding:30px;
+            Border-radius:16px;
+            Border:1px solid var(--border);
+            Max-width:600px;
+            Margin:auto;
+        }
+
+        .form-group{margin-bottom:18px;}
+
+        Label{
+            Display:block;
+            Font-weight:500;
+            Margin-bottom:6px;
+        }
+
+        Input,textarea{
+            Width:100%;
+            Padding:12px;
+            Border-radius:10px;
+            Border:1px solid var(--border);
+            Font-size:14px;
+        }
+
+        Textarea{resize:none;height:120px;}
+
+        Button{
+            Background:var(--accent);
+            Color:white;
+            Border:none;
+            Padding:12px 28px;
+            Border-radius:12px;
+            Font-size:15px;
+            Cursor:pointer;
+        }
+
+        Button:hover{opacity:0.9;}
+
+        Footer{
+            Background:var(--white);
+            Border-top:1px solid var(--border);
+            Text-align:center;
+            Padding:30px;
+            Color:var(--gray);
+            Font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Youth Team 12.2</h1>
+    <nav>
+        <a href=”#home”>Trang chủ</a>
+        <a href=”#about”>Giới thiệu</a>
+        <a href=”#activities”>Hoạt động</a>
+        <a href=”#facility”>Cơ sở vật chất</a>
+        <a href=”#register”>Đăng ký</a>
+    </nav>
+</header>
+
+<!—HERO 
+<section id=”home” class=”hero”>
+    <div class=”container”>
+        <h2>THPT Huỳnh Văn Nghệ</h2>
+        <p>Nơi lưu giữ thanh xuân – xây dựng tương lai.</p>
+    </div>
+</section>
+
+<!—GIỚI THIỆU 
+<section id=”about”>
+    <div class=”container”>
+        <div class=”title”>Giới thiệu</div>
+        <div class=”grid”>
+            <div class=”card”>
+                <div class=”img-box”>Khung ảnh lịch sử</div>
+                <div class=”card-body”>
+                    <h3>Lịch sử nhà trường</h3>
+                    <p>Nội dung giới thiệu về quá trình hình thành.</p>
+                </div>
+            </div>
+            <div class=”card”>
+                <div class=”img-box”>Khung ảnh thành tích</div>
+                <div class=”card-body”>
+                    <h3>Thành tựu</h3>
+                    <p>Các thành tích nổi bật qua các năm.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!—HOẠT ĐỘNG 
+<section id=”activities”>
+    <div class=”container”>
+        <div class=”title”>Hoạt động & Phong trào</div>
+        <div class=”grid”>
+            <div class=”card”>
+                <div class=”img-box”>Ảnh học tập</div>
+                <div class=”card-body”><h3>Học tập</h3></div>
+            </div>
+            <div class=”card”>
+                <div class=”img-box”>Ảnh thể thao</div>
+                <div class=”card-body”><h3>Thể thao</h3></div>
+            </div>
+            <div class=”card”>
+                <div class=”img-box”>Ảnh văn nghệ</div>
+                <div class=”card-body”><h3>Văn nghệ</h3></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!—CƠ SỞ VẬT CHẤT 
+<section id=”facility”>
+    <div class=”container”>
+        <div class=”title”>Cơ sở vật chất</div>
+        <div class=”grid”>
+            <div class=”card”><div class=”img-box”>Phòng học</div></div>
+            <div class=”card”><div class=”img-box”>Sân trường</div></div>
+            <div class=”card”><div class=”img-box”>Thư viện</div></div>
+        </div>
+    </div>
+</section>
+
+<!—FORM 
+<section id=”register”>
+    <div class=”container”>
+        <div class=”title”>Đăng ký / Liên hệ</div>
+
+        <form>
+            <div class=”form-group”>
+                <label>Họ và tên</label>
+                <input type=”text” placeholder=”Nhập họ tên”>
+            </div>
+
+            <div class=”form-group”>
+                <label>Email</label>
+                <input type=”email” placeholder=example@gmail.com>
+            </div>
+
+            <div class=”form-group”>
+                <label>Số điện thoại</label>
+                <input type=”text” placeholder=”0123 456 789”>
+            </div>
+
+            <div class=”form-group”>
+                <label>Nội dung</label>
+                <textarea placeholder=”Nhập nội dung liên hệ...”></textarea>
+            </div>
+
+            <button type=”submit”>Gửi thông tin</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 Youth Team 12.2 – THPT Huỳnh Văn Nghệ
+</footer>
+
+</body>
+</html>

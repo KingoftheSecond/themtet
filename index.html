@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngôi Trường Mến Yêu - Trang Chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h2 {color: #2c7a7b; text-indent: 3em;}
+        /* Container chứa các card Facebook */
+.facebook-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Từng ô chứa iframe */
+.fb-card {
+    background: #f0f2f5;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.fb-card h3 {
+    font-size: 1.1em;
+    color: #1877f2; 
+    margin-bottom: 10px;
+}
+
+/* Đảm bảo Iframe co giãn tốt */
+.fb-card iframe {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+
+    </style>
+</head>
+<body>
+<div style="position: fixed; bottom: 15px; left: 15px; z-index: 9999; font-family: sans-serif;">
+    <details style="background: rgba(255, 255, 255, 0.95); border: 2px solid #e74c3c; border-radius: 15px; padding: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); width: 280px;">
+        <summary style="cursor: pointer; font-weight: bold; color: #e74c3c; padding: 5px; list-style: none; text-align: center; font-size: 15px;">
+            🧧 NHẠC TẾT NGHE ĐỂ CẢM NHẬN ▾
+        </summary>
+        
+        <div style="margin-top: 10px; max-height: 300px; overflow-y: auto; padding-right: 5px;">
+            
+            <div style="margin-bottom: 12px; border-bottom: 1px solid #ffebee; padding-bottom: 5px;">
+                <p style="margin: 0 0 5px 0; font-size: 12px; color: #333;">🎵 Anh Cho Em Mùa Xuân</p>
+                <audio controls style="width: 100%; height: 30px;"><source src="NHAC/Anh Cho Em Mùa Xuân.mp3"></audio>
+            </div>
+
+            <div style="margin-bottom: 12px; border-bottom: 1px solid #ffebee; padding-bottom: 5px;">
+                <p style="margin: 0 0 5px 0; font-size: 12px; color: #333;">🎵 Mộng Chiều Xuân</p>
+                <audio controls style="width: 100%; height: 30px;"><source src="NHAC/Mộng Chiều Xuân.mp3"></audio>
+            </div>
+
+            <div style="margin-bottom: 12px; border-bottom: 1px solid #ffebee; padding-bottom: 5px;">
+                <p style="margin: 0 0 5px 0; font-size: 12px; color: #333;">🎵 Hoa Cỏ Mùa Xuân</p>
+                <audio controls style="width: 100%; height: 30px;"><source src="NHAC/Hoa Cỏ Mùa Xuân (Gala Nhạc Việt 9).mp3"></audio>
+            </div>
+
+            <div style="margin-bottom: 12px; border-bottom: 1px solid #ffebee; padding-bottom: 5px;">
+                <p style="margin: 0 0 5px 0; font-size: 12px; color: #333;">🎵 Như Hoa Mùa Xuân</p>
+                <audio controls style="width: 100%; height: 30px;"><source src="NHAC/Như Hoa Mùa Xuân (Gala Nhạc Việt 3).mp3"></audio>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <p style="margin: 0 0 5px 0; font-size: 12px; color: #333;">🎵 Tết Này Con Sẽ Về</p>
+                <audio controls style="width: 100%; height: 30px;"><source src="NHAC/Tết Này Con Sẽ Về.mp3"></audio>
+            </div>
+
+        </div>
+    </details>
+</div>
+    <header>
+    <div class="top-left-logos">
+        <img src="ANH/logotruong.png" alt="Logo Trường" class="mini-logo">
+    </div>
+    <div class="top-left-logos2">
+        <img src="ANH/logonhom.png" alt="Logo Nhóm" class="mini-logo2">
+    </div>
+
+    <h1 class="school-name">NGÔI TRƯỜNG MẾN YÊU</h1>
+    <div class="glass-card">
+        <h2 class="group-name">Nhóm: THÈM TẾT - Lớp 12.2</h2>
+        <p class="slogan">
+            "Một năm mới bình an - Niềm vui đầy ngập tràn - Cuộc sống thật an khang"
+        </p>
+    </div>
+</header>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li class="dropdown">
+                <a href="#">Hoạt động phong trào ▾</a>
+                <div class="dropdown-content">
+                    <a href="phongtrao.html">Phong trào</a>
+                    <a href="hoatdong2.html">Hoạt động hướng nghiệp siêu vip</a>
+                </div>
+            </li>
+            <li><a href="danhsach.html">Danh sách</a></li>
+            <li><a href="dangky.html">Đăng ký</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="left-sidebar">
+            <h4 style="color: #1e5799; margin-top: 0;">MỤC LỤC CHÍNH</h4>
+            <ul class="timeline-index">
+                <li><a href="#chao-mung"><span class="year">1</span> Chào mừng</a></li>
+                <li><a href="#video-gt"><span class="year">2</span> Video giới thiệu</a></li>
+                <li><a href="#tin-tuc"><span class="year">3</span> Tin tức nổi bật</a></li>
+                <li><a href="#lien-he"><span class="year">4</span> Thông tin liên hệ</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="chao-mung">
+                <h2>Chào mừng đến với dự án "Ngôi Trường Mến Yêu"</h2>
+                <p>Nơi lưu giữ những kỷ niệm đẹp nhất của tuổi học trò...</p>
+                
+                <video alt="Toàn cảnh trường" style="width:100%"; controls>
+                    <source src="VIDEO/toancanhtruong.mp4" type="video/mp4">
+                    
+                </video>
+            </section> 
+            <section id="video-gt">
+                <h2>Video giới thiệu nhóm</h2>
+                <video width="100%" controls>
+                    <source src="VIDEO/intro.mp4" type="video/mp4">
+                    NHÓM "THÈM TẾT" ĐÂY!!!
+                </video>
+                <p>Đoạn video dài 2-3 phút giới thiệu về các thành viên và quá trình làm dự án[cite: 18].</p>
+            </section>
+            
+            <section id="hinh-anh">
+            <h2 style="text-align: center;">Khoảnh Khắc Ngôi Trường</h2>
+            
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <img src="ANH/a1.jpg" alt="Cảnh trường 1">
+                    <img src="ANH/a2.jpg" alt="Cảnh trường 2">
+                    <img src="ANH/a3.jpg" alt="Cảnh trường 3">
+                    <img src="ANH/a4.jpg" alt="Cảnh trường 4">
+                </div>
+                </div>
+                
+                <p style="text-align: center;"><i>Hình ảnh các hoạt động nổi bật tại trường</i></p>
+            </section>
+
+            
+
+            <section id="tin-tuc">
+    <h2>Tin tức & Sự kiện</h2>
+    <p>Thông tin về các hoạt động ngoại khóa, học tập sắp tới của trường.</p>
+    
+    <div class="facebook-container">
+        <div class="fb-card">
+    <h3>Hoạt động Phong trào</h3>
+    <iframe 
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCaptionTrieu&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+        width="340" height="500" style="border:none; overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+    </iframe>
+</div>
+
+        <div class="fb-card">
+            <h3>Đoàn TNCS Hồ Chí Minh</h3>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61584605757923&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+        </div>
+    </div>
+
+    <p style="margin-top: 20px;">Xem thêm các thông báo khác tại 
+        <a href="https://www.facebook.com/CaptionTrieu" target="_blank">đây</a>.</p>
+        <a href="https://www.facebook.com/profile.php?id=61584605757923" target="_blank"> và đây</a>.</p>
+
+    </section>
+
+            <section id="lien-he">
+                <h2>Thông tin liên hệ</h2>
+                <p>Bạn có thể liên hệ với chúng tôi qua các kênh mạng xã hội bên dưới chân trang.</p>
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.939313301397!2d106.79516817480928!3d11.062294089104372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174c4bed03cdaab%3A0xd1736496309c42ad!2zVHLGsOG7nW5nIFRIUFQgSHXhu7NuaCBWxINuIE5naOG7hw!5e1!3m2!1svi!2sph!4v1766154362938!5m2!1svi!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h2 >BẢN ĐỒ VỊ TRÍ TRƯỜNG</h2>
+
+            </section>
+            
+        </main>
+    </div>
+   
+    
+
+    <footer>
+    <div class="footer-container">
+        <p class="footer-copyright">© 2026 Bản quyền thuộc về Nhóm <strong>"THÈM TẾT"</strong></p>
+        
+        <p class="footer-address">
+            📍 <strong>Địa chỉ:</strong> Đường ĐT 747, Khu phố 4, Phường Uyên Hưng, Thành phố Tân Uyên, Tỉnh Bình Dương
+        </p>
+        
+        <div class="footer-social">
+            <span>Kết nối với chúng tôi:</span>
+            <a href="https://www.facebook.com/profile.php?id=61571166575273" target="_blank" class="fb-link">
+                🔵 Facebook Nhóm THÈM TẾT
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

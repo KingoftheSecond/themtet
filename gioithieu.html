@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Ngôi Trường Mến Yêu</title>
+    <style>
+        /* 1. THIẾT LẬP CHUNG */
+        body { 
+            margin: 0; padding: 0; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            line-height: 1.6;
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('ANH/than.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* 2. HEADER */
+        header {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('ANH/dau.jpg');
+            background-size: cover; background-position: center;
+            height: 250px; color: white;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        header h1 { font-size: 2.8em; margin: 0; color: #ffce00; text-shadow: 2px 2px 10px black; }
+
+        /* 3. MENU */
+        nav.main-menu { background: #1e5799; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        nav.main-menu ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+        nav.main-menu ul li a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; }
+        nav.main-menu ul li:hover { background: #ffce00; }
+        nav.main-menu ul li:hover > a { color: #1e5799; }
+
+        .dropdown-content { display: none; position: absolute; background: #fff; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #333 !important; padding: 10px 15px !important; display: block; text-decoration: none; border-bottom: 1px solid #eee; }
+
+        /* 4. BỐ CỤC CONTAINER 3 CỘT */
+        .container { 
+            display: flex; 
+            max-width: 1300px; 
+            margin: 30px auto; 
+            gap: 20px; 
+            align-items: flex-start;
+        }
+
+        /* Cột trái: Mục lục */
+        aside.left-sidebar {
+            flex: 1.5; 
+            position: sticky; top: 80px;
+            background: white; padding: 20px;
+            border-radius: 8px; border-top: 4px solid #ffce00;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .timeline-index { list-style: none; padding: 0; }
+        .timeline-index li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .timeline-index a { text-decoration: none; color: #444; font-weight: bold; display: block; }
+        .timeline-index a:hover { color: #1e5799; padding-left: 5px; transition: 0.3s; }
+        .year { background: #ffce00; padding: 2px 5px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+
+        /* Cột giữa: Nội dung chính */
+        main { flex: 5; }
+
+        /* Cột phải: Thông tin nhanh */
+        aside.right-sidebar { flex: 2; position: sticky; top: 80px; }
+
+        .sidebar-box {
+            background: white; padding: 20px; margin-bottom: 20px;
+            border-radius: 8px; border-top: 4px solid #1e5799;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        section { 
+            background: white; padding: 30px; margin-bottom: 25px;
+            border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        section h2 { color: #1e5799; border-left: 5px solid #ffce00; padding-left: 15px; margin-top: 0; }
+
+        /* 5. IFRAME THÀNH TỰU TO RÕ */
+        .big-iframe {
+            width: 100%;
+            height: 800px; /* Chiều cao lớn để dễ đọc */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .big-iframe iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ĐỊNH DẠNG BẢNG */
+        .table-container { overflow-x: auto; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+        table th { background: #1e5799; color: white; padding: 12px; text-align: left; }
+        table td { border: 1px solid #eee; padding: 10px; }
+        table tr:nth-child(even) { background: #f9f9f9; }
+        table tr:hover { background: #fff9e6; }
+
+        .school-img { width: 100%; border-radius: 8px; margin: 15px 0; }
+
+        /* 6. FOOTER */
+        footer { 
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('ANH/chan.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    padding: 40px 20px; 
+    text-align: center; 
+    margin-top: 50px;
+    border-top: 5px solid #ffce00;
+}
+footer a { color: #ffce00; text-decoration: none; font-weight: bold; }
+
+        @media (max-width: 1024px) {
+            .container { flex-direction: column; padding: 0 15px; }
+            aside.left-sidebar, aside.right-sidebar, main { width: 100%; position: static; flex: none; }
+            .big-iframe { height: 500px; }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <header>
+        <h1>GIỚI THIỆU TRUYỀN THỐNG</h1>
+        <p>Hành trình thắp sáng tri thức của mái trường anh hùng</p>
+    </header>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li class="dropdown">
+                <a href="#">Hoạt động phong trào ▾</a>
+                <div class="dropdown-content">
+                    <a href="phongtrao.html">Phong trào</a>
+                    <a href="hoatdong2.html">Hoạt động hướng nghiệp siêu vip</a>
+                </div>
+            </li>
+            <li><a href="danhsach.html">Danh sách</a></li>
+            <li><a href="dangky.html">Đăng ký</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="left-sidebar">
+            <h4 style="color: #1e5799; margin-top: 0;">NỘI DUNG CHÍNH</h4>
+            <ul class="timeline-index">
+                <li><a href="#lich-su"><span class="year">1</span> Lịch sử hình thành</a></li>
+                <li><a href="#hieu-truong"><span class="year">2</span> Ban Giám hiệu</a></li>
+                <li><a href="#thanh-tich"><span class="year">3</span> Thành tích nổi bật</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="lich-su">
+                <h2>1. Lịch sử hình thành</h2>
+                <p>Từ năm 1959, trải qua bao biến động của lịch sử, ngôi trường đã không ngừng vươn lên. Từ cái tên Trung học Trần Quốc Tuấn đến THPT Huỳnh Văn Nghệ ngày nay, đây là cái nôi đào tạo biết bao thế hệ tài danh cho tỉnh Bình Dương.</p>
+                <img src="ANH/gt1.jpg" alt="Lịch sử trường" class="school-img">
+            </section>
+
+            <section id="hieu-truong">
+                <h2>2. Danh sách Hiệu trưởng qua các thời kỳ</h2>
+                 <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>STT</th>
+
+                                <th>Tên Hiệu trưởng</th>
+
+                                <th>Năm học</th>
+
+                                <th>Tên trường</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr><td>01</td><td>Đặng Duy Chiểu</td><td>1959 – 1960</td><td>Trung Học Trần Quốc Tuấn</td></tr>
+
+                            <tr><td>02</td><td>Trần Bá An</td><td>1960 – 1962</td><td>Trung Học Phước Thành</td></tr>
+
+                            <tr><td>03</td><td>Trần Thanh Thủy</td><td>1962 – 1965</td><td>Trung Học Phước Thành</td></tr>
+
+                            <tr><td>04</td><td>Nguyễn Văn Thại</td><td>1965 – 1966</td><td>Trung Học Phước Thành</td></tr>
+
+                            <tr><td>05</td><td>Huỳnh Kim Thiên</td><td>1966 – 1972</td><td>Trung Học Phước Thành</td></tr>
+
+                            <tr><td>06</td><td>Trịnh Văn Tây</td><td>1972 – 4/1975</td><td>Trung Học Tân Uyên</td></tr>
+
+                            <tr><td>07</td><td>Nguyễn Danh Thuyết</td><td>4/1975 – 1976</td><td>Phổ Thông Cấp 2, 3 Tân Uyên</td></tr>
+
+                            <tr><td>08</td><td>Trịnh Hữu Sắc</td><td>1976 – 1978</td><td>Phổ Thông Tân Uyên 1</td></tr>
+
+                            <tr><td>09</td><td>Nguyễn Văn Thi</td><td>1978 – 1979</td><td>Phổ Thông Tân Uyên 1</td></tr>
+
+                            <tr><td>10</td><td>Huỳnh Tấn Hùng</td><td>1979 – 1982</td><td>Phổ Thông Tân Uyên 1</td></tr>
+
+                            <tr><td>11</td><td>Nguyễn Thường Chinh</td><td>1982 – 1988</td><td>Phổ Thông Tân Uyên 1</td></tr>
+
+                            <tr><td>12</td><td>Lê Văn Tuấn</td><td>1988 – 1990</td><td>Phổ Thông Tân Uyên 1</td></tr>
+
+                            <tr><td>13</td><td>Phan Duy Quan</td><td>1990 – 2007</td><td>THPT Huỳnh Văn Nghệ</td></tr>
+
+                            <tr><td>14</td><td>Võ Thành Danh</td><td>2007 – 7/2012</td><td>THPT Huỳnh Văn Nghệ</td></tr>
+
+                            <tr><td>15</td><td>Trần Trọng Hoàng</td><td>8/2012 – 6/2019</td><td>THPT Huỳnh Văn Nghệ</td></tr>
+
+                            <tr><td>16</td><td>Nguyễn Tấn Tài</td><td>7/2019 – đến nay</td><td>THPT Huỳnh Văn Nghệ</td></tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </section>
+
+            <section id="thanh-tich">
+                <h2>3. Thành tích nổi bật</h2>
+                <p>Thông tin tổng kết năm học 2024 - 2025 của trường THPT Huỳnh Văn Nghệ:</p>
+                <div class="big-iframe">
+                    <iframe src="https://tanuyen.binhduong.gov.vn/tin-tuc/truong-thpt-huynh-van-nghe-tong-ket-nam-hoc-2024-2025">
+                        Trình duyệt của bạn không hỗ trợ xem iframe.
+                    </iframe>
+                </div>
+            </section>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="sidebar-box">
+                <h4 style="margin-top:0;">THÔNG TIN NHANH</h4>
+                <ul style="padding-left: 15px; font-size: 0.9em;">
+                    <li><strong>Thành lập:</strong> 1959</li>
+                    <li><strong>Diện tích:</strong> 2.5 Hecta</li>
+                    <li><strong>Giáo viên:</strong> 120+ thầy cô</li>
+                    <li><strong>Học sinh:</strong> 2000+ học sinh</li>
+                </ul>
+            </div>
+            <div class="sidebar-box">
+                <h4 style="margin-top:0;">TRUYỀN THỐNG</h4>
+                <img src="ANH/a1.jpg" alt="Tượng đài" class="school-img" style="height: 150px; object-fit: cover;">
+                <p style="font-size: 0.8em; text-align: center; font-style: italic;">Tượng Thi Tướng Huỳnh Văn Nghệ</p>
+            </div>
+        </aside>
+    </div>
+<footer>
+    <div class="footer-container">
+        <p class="footer-copyright">© 2026 Bản quyền thuộc về Nhóm <strong>"THÈM TẾT"</strong></p>
+        
+        <p class="footer-address">
+            📍 <strong>Địa chỉ:</strong> Đường ĐT 747, Khu phố 4, Phường Uyên Hưng, Thành phố Tân Uyên, Tỉnh Bình Dương
+        </p>
+        
+        <div class="footer-social">
+            <span>Kết nối với chúng tôi:</span>
+            <a href="https://www.facebook.com/profile.php?id=61571166575273" target="_blank" class="fb-link">
+                🔵 Facebook Nhóm THÈM TẾT
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
