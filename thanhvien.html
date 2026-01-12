@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đội Ngũ Nhóm - THÈM TẾT</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* HEADER ĐỘC QUYỀN TRANG THÀNH VIÊN */
+        .member-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ANH/dau.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 5px solid #ffce00;
+        }
+
+        /* BỐ CỤC KHOA HỌC CHO DANH SÁCH THÀNH VIÊN */
+        .member-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-row {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 8px solid #1e5799;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .member-row:hover {
+            transform: scale(1.02);
+            border-left-color: #d32f2f;
+            background: #fff;
+        }
+
+        /* Cột trái: Tên & Link FB */
+        .member-name-box {
+            flex: 1;
+            border-right: 2px solid #eee;
+            padding-right: 20px;
+        }
+
+        .fb-link {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1877F2; 
+            text-decoration: none;
+        }
+
+        .fb-link:hover { text-decoration: underline; }
+
+        .role-tag {
+            font-size: 0.8em;
+            background: #ffce00;
+            color: #1e5799;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Cột phải: Thông tin chi tiết */
+        .member-info-box {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .member-details summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #d32f2f;
+            list-style: none;
+            outline: none;
+        }
+
+        .info-content {
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .info-content p { margin: 5px 0; }
+        
+        /* Màu sắc nhấn mạnh cho slogan trong header */
+        .header-slogan {
+            color: #ffce00;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="member-header">
+        
+        <div class="glass-card">
+            <h1 class="group-name">ĐỘI NGŨ THỰC HIỆN</h1>
+            <p class="header-slogan">"Sát cánh bên nhau - Gặt hái thành công"</p>
+        </div>
+    </header>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li class="dropdown">
+                <a href="#">Hoạt động phong trào ▾</a>
+                <div class="dropdown-content">
+                    <a href="phongtrao.html">Phong trào</a>
+                    <a href="hoatdong2.html">Hoạt động hướng nghiệp siêu vip</a>
+                </div>
+            </li>
+            <li><a href="danhsach.html">Danh sách</a></li>
+            <li><a href="dangky.html">Đăng ký</a></li>
+            <li><a href="thanhvien.html" style="color: #ffce00;">Thành viên</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" style="justify-content: center;">
+        <main style="flex: 1; max-width: 1000px;">
+            <section>
+                <h2 style="text-align: center;">🧧 NHÂN SỰ DỰ ÁN NHÓM THÈM TẾT</h2>
+                
+                <div class="member-container">
+                    
+                    <div class="member-row">
+                        <div class="member-name-box">
+                            <a href="https://www.facebook.com/profile.php?id=61564250654594"  target="_blank"  class="fb-link">Nguyễn Quốc Anh</a><br>
+                            <span class="role-tag">TRƯỞNG NHÓM</span>
+                        </div>
+                        <div class="member-info-box">
+                            <details class="member-details">
+                                <summary>Xem hồ sơ năng lực ▾</summary>
+                                <div class="info-content">
+                                    <p><strong>💪 Điểm mạnh:</strong> Lập trình cấu trúc, quản lý tiến độ.</p>
+                                    <p><strong>💧 Điểm yếu:</strong> Thích làm việc xuyên đêm.</p>
+                                    <p><strong>🌟 Đặc điểm:</strong> Khả năng lãnh đạo và tư duy chiến lược tuyệt vời.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="member-row">
+                        <div class="member-name-box">
+                            <a href="#" class="fb-link">Trần Văn Minh</a><br>
+                            <span class="role-tag">DESIGNER</span>
+                        </div>
+                        <div class="member-info-box">
+                            <details class="member-details">
+                                <summary>Xem hồ sơ năng lực ▾</summary>
+                                <div class="info-content">
+                                    <p><strong>💪 Điểm mạnh:</strong> Phối màu Tết, thiết kế Banner.</p>
+                                    <p><strong>💧 Điểm yếu:</strong> Hay bị "bí" ý tưởng khi đói.</p>
+                                    <p><strong>🌟 Đặc điểm:</strong> Tỉ mỉ, luôn chăm chút từng Pixel ảnh.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="member-row">
+                        <div class="member-name-box">
+                            <a href="https://www.facebook.com/phan.ni.501180" class="fb-link">Phan Thanh Hoài Phúc</a><br>
+                            <span class="role-tag">CONTENT WRITER</span>
+                        </div>
+                        <div class="member-info-box">
+                            <details class="member-details">
+                                <summary>Xem hồ sơ năng lực ▾</summary>
+                                <div class="info-content">
+                                    <p><strong>💪 Điểm mạnh:</strong> Biên tập mục Hướng nghiệp siêu vip.</p>
+                                    <p><strong>💧 Điểm yếu:</strong> Viết văn quá cảm xúc nên hơi dài.</p>
+                                    <p><strong>🌟 Đặc điểm:</strong> Giọng văn truyền cảm, gần gũi với học sinh.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="member-row">
+                        <div class="member-name-box">
+                            <a href="https://www.facebook.com/pham.khanh.hung.710298" class="fb-link">Phạm Khánh Hưng</a><br>
+                            <span class="role-tag">DATA MANAGER</span>
+                        </div>
+                        <div class="member-info-box">
+                            <details class="member-details">
+                                <summary>Xem hồ sơ năng lực ▾</summary>
+                                <div class="info-content">
+                                    <p><strong>💪 Điểm mạnh:</strong> Sắp xếp mục lục khoa học.</p>
+                                    <p><strong>💧 Điểm yếu:</strong> Sợ các bảng dữ liệu quá rối.</p>
+                                    <p><strong>🌟 Đặc điểm:</strong> Làm việc logic, cẩn thận trong việc kiểm lỗi.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="member-row">
+                        <div class="member-name-box">
+                            <a href="https://www.facebook.com/hoanganhthaii1273" class="fb-link">Hoàng Anh Thái</a><br>
+                            <span class="role-tag">TECHNICAL SUPPORT</span>
+                        </div>
+                        <div class="member-info-box">
+                            <details class="member-details">
+                                <summary>Xem hồ sơ năng lực ▾</summary>
+                                <div class="info-content">
+                                    <p><strong>💪 Điểm mạnh:</strong> Xử lý nhạc nền và hiệu ứng Slider.</p>
+                                    <p><strong>💧 Điểm yếu:</strong> Ít nói nhưng làm rất nhiều.</p>
+                                    <p><strong>🌟 Đặc điểm:</strong> Luôn hỗ trợ đồng đội mọi lúc mọi nơi.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nhóm THÈM TẾT - Huỳnh Văn Nghệ</p>
+        <p>"Một năm mới bình an - Niềm vui đầy ngập tràn - Cuộc sống thật an khang"</p>
+    </footer>
+
+</body>
+</html>
